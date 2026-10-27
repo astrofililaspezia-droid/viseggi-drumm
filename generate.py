@@ -19,6 +19,8 @@ try:
     st.merge(method=1, fill_value=None)
     fig, axs = plt.subplots(24, 1, figsize=(12, 14))
     fig.patch.set_facecolor('#0b1629')
+    # Tracce a quattro colori, come il drum Home Assistant.
+    trace_colors = ('#ff344b', '#25ca65', '#e1c83f', '#3488ff')
     for i, ax in enumerate(axs):
         hour_start = start + timedelta(hours=i)
         hour_end = hour_start + timedelta(hours=1)
@@ -42,7 +44,7 @@ try:
             if not good.any(): continue
             vals = vals - np.nanmedian(vals[good])
             scale = max(1.0, float(np.nanpercentile(np.abs(vals[good]), 98)))
-            ax.plot(times, np.clip(vals / scale, -1.3, 1.3), color='#72e2bd', lw=.65)
+            ax.plot(times, np.clip(vals / scale, -1.3, 1.3), color=trace_colors[i % len(trace_colors)], lw=.65)
     fig.subplots_adjust(top=.93, bottom=.05, left=.105, right=.97, hspace=.23)
     fig.text(.105,.975,'MONTE VISEGGI  |  DRUM SISMICO 24 ORE',color='white',weight='bold',fontsize=16,va='top')
     fig.text(.105,.949,'INGV · IV.LSPZ.00.EHZ · orari UTC · tracce normalizzate per ora',color='#a6bdd8',fontsize=9,va='top')
