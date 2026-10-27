@@ -1,0 +1,14 @@
+DRUM LSPZ - MONTE VISEGGI
+
+1. Crea su GitHub un repository PUBBLICO chiamato viseggi-drum.
+2. Estrai questo ZIP e carica i file in GitHub, conservando la directory .github/workflows.
+3. Apri Settings > Pages e scegli Source: GitHub Actions.
+4. Vai in Actions > Drum LSPZ automatico > Run workflow.
+5. URL atteso: https://TUO_USERNAME.github.io/viseggi-drum/
+   URL immagine: https://TUO_USERNAME.github.io/viseggi-drum/drum.png
+6. Su Drupal inserisci l'URL dell'immagine oppure crea un link alla pagina.
+
+Il progetto tenta un aggiornamento ogni 15 minuti, soggetto a ritardi GitHub Actions.
+Se l'acquisizione fallisce, compare un errore esplicito anziché un grafico inventato.
+Il canale LSPZ è presente nel catalogo INGV, ma la disponibilità del flusso recente
+non è stata provata in questa sessione. Verificarla al primo avvio del workflow.
